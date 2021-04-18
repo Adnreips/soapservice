@@ -1,0 +1,33 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://com.soapserver"
+           targetNamespace="http://com.soapserver" elementFormDefault="qualified">
+
+    <xs:element name="getCurrencyConversionDtoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="from" type="xs:string"/>
+                <xs:element name="to" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCurrencyConversionDtoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="currencyConversionDto" type="tns:currencyConversionDto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="currencyConversionDto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="from" type="xs:string"/>
+            <xs:element name="to" type="xs:string"/>
+            <xs:element name="conversionMultiple" type="xs:decimal"/>
+            <xs:element name="quantity" type="xs:decimal"/>
+            <xs:element name="multiply" type="xs:decimal"/>
+            <xs:element name="port" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
