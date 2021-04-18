@@ -1,4 +1,4 @@
-package com.springboot.microservice;
+package com.springboot.microservice.soapserver;
 
 
 import org.springframework.boot.SpringApplication;

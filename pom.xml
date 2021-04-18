@@ -76,7 +76,7 @@
                     <sources>
                         <source>${project.basedir}/src/main/resources/currencyconversiondto.xsd</source>
                     </sources>
-                    <outputDirectory>${project.basedir}/src/main/java/generated</outputDirectory>
+<!--                    <outputDirectory>${project.basedir}/src/main/java/generated</outputDirectory>-->
                 </configuration>
             </plugin>
         </plugins>
