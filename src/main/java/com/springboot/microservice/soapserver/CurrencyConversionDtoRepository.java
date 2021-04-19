@@ -1,6 +1,8 @@
-package com.springboot.microservice.soapserver.repository;
+package com.springboot.microservice.soapserver;
 
-import generated.soapserver.com.CurrencyConversionDto;
+import com.springboot.microservice.CurrencyConversionDto;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -9,7 +11,10 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+
 @Component
+@Slf4j
+@Data
 public class CurrencyConversionDtoRepository {
     private static final Map<String, CurrencyConversionDto> currencyConversionDtoHashMap = new HashMap<>();
 
@@ -28,7 +33,11 @@ public class CurrencyConversionDtoRepository {
     }
 
     public CurrencyConversionDto findCurrencyConversionDto(String from) {
+
         Assert.notNull(from, "The CurrencyConversionDto's from must not be null");
-        return currencyConversionDtoHashMap.get(from);
+        CurrencyConversionDto currencyConversionDto = currencyConversionDtoHashMap.get(from);
+
+
+        return currencyConversionDto;
     }
 }

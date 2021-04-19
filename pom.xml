@@ -44,7 +44,29 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.springboot.microservice.soapserver</groupId>
+            <artifactId>api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>java11</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+
+            <dependencies>
+                <dependency>
+                    <groupId>org.glassfish.jaxb</groupId>
+                    <artifactId>jaxb-runtime</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
@@ -76,7 +98,6 @@
                     <sources>
                         <source>${project.basedir}/src/main/resources/currencyconversiondto.xsd</source>
                     </sources>
-<!--                    <outputDirectory>${project.basedir}/src/main/java/generated</outputDirectory>-->
                 </configuration>
             </plugin>
         </plugins>
