@@ -4,7 +4,7 @@
     <xs:element name="getCurrencyConversionDtoRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="from" type="xs:string"/>
+                <xs:element name="currencyConversionDto" type="tns:currencyConversionDto"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
