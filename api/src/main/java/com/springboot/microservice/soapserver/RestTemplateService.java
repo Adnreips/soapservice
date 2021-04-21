@@ -20,7 +20,6 @@ public class RestTemplateService {
         CurrencyConversionDto result
                 = restTemplate.postForEntity("http://localhost:8000/exchangevalue/retrieve", requestBody, CurrencyConversionDto.class).getBody();
 
-
         return result;
     }
 
